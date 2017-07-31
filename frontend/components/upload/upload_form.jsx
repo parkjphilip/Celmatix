@@ -5,10 +5,14 @@ import { Link, withRouter } from 'react-router';
 class UploadForm extends React.Component {
 	constructor(props) {
 		super(props);
+    this.updateFile = this.updateFile.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
   updateFile(e) {
+
     var file = e.currentTarget.files[0];
+    debugger
     this.setState({ file: file });
     // var fileReader = new FileReader();
     // fileReader.onloadend = function () {
@@ -21,14 +25,16 @@ class UploadForm extends React.Component {
   }
 
   handleSubmit(e) {
-
+    debugger
+    this.props.createProduts(this.state.file);
   }
-  
+
   render() {
 
     return (
       <div>
         <input type="file" onChange={this.updateFile}/>
+        <button onClick={this.handleSubmit}>Submit File</button>
       </div>
     );
   }

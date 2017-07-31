@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import {}
-// import { login, logout, signup, resetErrors } from '../../actions/session_actions';
+import { createProducts } from '../../actions/product_actions';
 import UploadForm from './upload_form';
 
 
@@ -13,7 +12,7 @@ const mapStateToProps = ( state ) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return ({
-
+    createProducts: file => dispatch(createProducts(file))
   });
 };
 
