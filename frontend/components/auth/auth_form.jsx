@@ -66,7 +66,7 @@ class AuthForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
             <h1>Please {this.props.formType}</h1>
-            <div>
+            <div >
               <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Username (email)"/>
               <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
               <input type="submit" value={this.props.formType}/>
