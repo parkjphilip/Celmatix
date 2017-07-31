@@ -1,28 +1,27 @@
-var path = require("path");
-var webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/entry.jsx",
+  entry: './frontend/entry.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-    filename: "bundle.js"
+    filename: 'bundle.js'
   },
-  plugins: plugins,
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     loaders: [
       {
         test: [/\.jsx?$/, /\.js?$/],
-        exclude: /node_modules/,
+        exclude: /(node_modules)/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['react', 'es2015']
         }
       }
     ]
   },
-  devtool: 'source-map',
-  resolve: {
-    extensions: [".js", ".jsx", "*"]
-  }
+  devtool: 'source-maps'
 };
