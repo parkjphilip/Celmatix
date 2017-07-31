@@ -7,3 +7,10 @@ export const createProducts = (file) => {
     data: file
   });
 };
+
+export const fetchProducts = () => {
+  return $.ajax({
+    method: 'get',
+    url: 'api/products'
+  });
+};
