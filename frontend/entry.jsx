@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Root from './components/root';
+import configureStore from './store/store';
 
-console.log('abcwaefwef');
+
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById("root");
-  ReactDOM.render(<h2>Welcome to Celmatix Challenge</h2>, root);
+    let store;
+    if (window.currentUser) {
+      const preloadedState = { session: { currentUser: window.currentUser } };
+      store = configureStore(preloadedState);
+    } else {
+      store = configureStore();
+    }
+    const root = document.getElementById("root");
+    ReactDOM.render(<Root store={store} />, root);
 });
