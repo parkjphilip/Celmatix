@@ -1,12 +1,12 @@
 import React from 'react';
-import NavBar from './nav/navbar';
+import NavBarContainer from './nav/navbar_container';
 import AuthButtonsContainer from './nav/auth_buttons_container';
 
 const App = ( props ) => {
     return (
       <div id="app-wrapper">
         <div>
-          <NavBar />
+          <NavBarContainer />
           <AuthButtonsContainer />
           { props.children }
         </div>

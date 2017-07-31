@@ -1,22 +1,20 @@
 import { connect } from 'react-redux';
-// import { login, logout, signup, resetErrors } from '../../actions/session_actions';
-import UploadForm from './upload_form';
+import { logout } from '../../actions/session_actions';
+import NavBar from './navbar';
 
 
 const mapStateToProps = ( state ) => {
   return ({
-
+    currentUser: state.session.currentUser
   });
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-
   return ({
-
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UploadForm);
+)(NavBar);
