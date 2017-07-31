@@ -7,21 +7,13 @@ class NavBar extends React.Component {
 	}
 
   renderNavTabs() {
-    if (window.location.hash === "#/") {
-      return (
-        <div id="products-selected">
-          <div>Products</div>
-          <Link to="/cart">Cart</Link>
+    return (
+      <div id="products-selected">
+        <Link to="/">Products</Link>
+        <Link to="/cart">Cart</Link>
+        <Link to="/upload">Upload Products></Link>
       </div>
-      );
-    } else {
-      return (
-        <div id="cart-selected">
-          <Link to="/">Products</Link>
-          <div>Cart</div>
-        </div>
-      );
-    }
+    );
   }
 
   render() {
