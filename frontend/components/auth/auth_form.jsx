@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter, hashHistory } from 'react-router';
+// import createBrowserHistory from 'history/createBrowserHistory';
+
+// const history = createBrowserHistory();
 
 class AuthForm extends React.Component {
 	constructor(props) {
@@ -27,10 +30,12 @@ class AuthForm extends React.Component {
 	}
 
 	handleSubmit(e) {
+    debugger
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm(user)
-							.then(() => this.props.router.push("/"));
+							.then(() => this.props.history.push("/#"));
+              // .then(() => history.go(0));
 	}
 
 	// navLink() {
@@ -42,23 +47,30 @@ class AuthForm extends React.Component {
 	// }
 
 	renderErrors() {
-  		return(
-  			<ul className="login-signup-errors">
-  				{this.props.errors.map((error, i) => (
-  					<li key={`${i}`}>
-  						{error}
-  					</li>
-  				))}
-  			</ul>
-  		);
+    if (this.props.errors) {
+      return(
+        <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`${i}`}>
+          {error}
+          </li>
+        ))}
+        </ul>
+      );
+    } else {
+      return (
+        <div>
+        </div>
+      );
+    }
 	}
 
 	render() {
 		return (
       <div>
           <form onSubmit={this.handleSubmit}>
+          {this.renderErrors()}
             <h1>Please {this.props.formType}</h1>
-            {this.renderErrors()}
             <div className="login-signup-form">
               <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Username (email)"/>
               <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>

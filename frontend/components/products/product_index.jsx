@@ -8,9 +8,10 @@ class ProductIndex extends React.Component {
 	}
 
   render() {
+
     return (
       <div>
-        abc
+        This is the product index
       </div>
     );
   }

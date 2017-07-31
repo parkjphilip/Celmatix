@@ -7,7 +7,6 @@ import ProductsContainer from './products/products_container';
 import App from './app';
 
 const Root = ({store}) => {
-
   return (
     <Provider store={ store }>
       <HashRouter>
