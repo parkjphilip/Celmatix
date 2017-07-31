@@ -10,23 +10,12 @@ class UploadForm extends React.Component {
 	}
 
   updateFile(e) {
-
     var file = e.currentTarget.files[0];
-    debugger
     this.setState({ file: file });
-    // var fileReader = new FileReader();
-    // fileReader.onloadend = function () {
-    //   this.setState({ file: file });
-    // }.bind(this);
-    // if (file) {
-    //   fileReader.readAsDataURL(file);
-    // }
-    // debugger
   }
 
   handleSubmit(e) {
-    debugger
-    this.props.createProduts(this.state.file);
+    this.props.createProducts(this.state.file);
   }
 
   render() {
