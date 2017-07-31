@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731014926) do
+ActiveRecord::Schema.define(version: 20170731015400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cart_items", force: :cascade do |t|
-    t.integer "product_id",       null: false
-    t.integer "quantity",         null: false
-    t.integer "shopping_cart_id", null: false
+    t.integer  "product_id",       null: false
+    t.integer  "quantity",         null: false
+    t.integer  "shopping_cart_id", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.index ["product_id"], name: "index_cart_items_on_product_id", unique: true, using: :btree
     t.index ["shopping_cart_id"], name: "index_cart_items_on_shopping_cart_id", unique: true, using: :btree
   end
