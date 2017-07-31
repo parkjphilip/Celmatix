@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_one :cart
+  has_many :orders
+  
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
     @password = password
