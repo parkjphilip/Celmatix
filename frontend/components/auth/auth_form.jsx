@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link, withRouter, hashHistory } from 'react-router';
-// import createBrowserHistory from 'history/createBrowserHistory';
-
-// const history = createBrowserHistory();
+import { Link, withRouter } from 'react-router';
 
 class AuthForm extends React.Component {
 	constructor(props) {
@@ -13,7 +10,7 @@ class AuthForm extends React.Component {
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			this.props.router.push("/");
+			this.props.history.push("/#");
 		}
 	}
 
@@ -30,12 +27,10 @@ class AuthForm extends React.Component {
 	}
 
 	handleSubmit(e) {
-    debugger
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm(user)
 							.then(() => this.props.history.push("/#"));
-              // .then(() => history.go(0));
 	}
 
 	// navLink() {
@@ -44,7 +39,7 @@ class AuthForm extends React.Component {
 	// 	} else {
 	// 		return <Link to="/login">log in</Link>;
 	// 	}
-	// }
+	// }s
 
 	renderErrors() {
     if (this.props.errors) {
@@ -71,7 +66,7 @@ class AuthForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
             <h1>Please {this.props.formType}</h1>
-            <div className="login-signup-form">
+            <div>
               <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Username (email)"/>
               <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
               <input type="submit" value={this.props.formType}/>
