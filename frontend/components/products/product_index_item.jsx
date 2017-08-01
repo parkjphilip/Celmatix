@@ -9,7 +9,7 @@ class ProductIndexItem extends React.Component {
 
   handleAddToCart() {
     return () => {
-      this.props.addToCart(this.props.product,
+      this.props.addToCart(this.props.product.id,
                            this.props.currentUser.cart.id,
                            this.props.currentUser.id);
     };

@@ -1,10 +1,10 @@
-export const addToCart = (product, cartId, userId) => {
+export const addToCart = (productId, cartId, userId) => {
   debugger
   return $.ajax({
-    method: 'put',
-    url: `/api/users/${userId}/carts/${cartId}`,
+    method: 'post',
+    url: `/api/users/${userId}/carts/${cartId}/cart_items`,
     data: {
-      product: product,
+      productId: productId,
       cartId: cartId
     }
   });
