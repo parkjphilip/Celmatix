@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-
-// import ParkIndexItem from './park_index_item';
+import ProductIndexItem from './product_index_item';
 
 class ProductIndex extends React.Component {
 	constructor(props) {
@@ -13,12 +12,20 @@ class ProductIndex extends React.Component {
   }
 
   render() {
-
-    return (
-      <div>
-
-      </div>
-    );
+    if (Object.keys(this.props.products).length === 0 ) {
+      return (
+        <div> No products uploaded yet </div>
+      );
+    } else {
+        return (
+          <div>
+            <ul>
+              {this.props.products.map(product =>
+                <ProductIndexItem key={product.id} product={product} />)}
+            </ul>
+          </div>
+        );
+    }
   }
 }
 

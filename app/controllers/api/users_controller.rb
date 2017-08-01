@@ -7,7 +7,6 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      debugger
       login(@user)
       NewUserMailer.notify_user(@user).deliver
       render "api/users/show"

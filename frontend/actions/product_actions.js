@@ -12,7 +12,6 @@ export const fetchProducts = () => dispatch => {
 };
 
 export const receiveProducts = products => {
-  debugger
   return ({
     type: RECEIVE_PRODUCTS,
     products
