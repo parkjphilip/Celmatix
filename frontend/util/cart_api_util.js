@@ -4,8 +4,8 @@ export const addToCart = (productId, cartId, userId) => {
     method: 'post',
     url: `/api/users/${userId}/carts/${cartId}/cart_items`,
     data: {
-      productId: productId,
-      cartId: cartId
+      product_id: productId,
+      cart_id: cartId
     }
   });
 };
