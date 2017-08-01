@@ -2,8 +2,8 @@ import * as CartAPIUtil from '../util/cart_api_util';
 
 // export const RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS";
 
-export const addToCart = (product, cartId) => dispatch => {
-  CartAPIUtil.addToCart(product, cartId);
+export const addToCart = (product, cartId, userId) => dispatch => {
+  CartAPIUtil.addToCart(product, cartId, userId);
 };
 
 // export const fetchProducts = () => dispatch => {

@@ -5,8 +5,8 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @cart = Cart.new(user_id: @user.id)
     if @user.save
+      @cart = Cart.new(user_id: @user.id)
       @cart.save
       login(@user)
       NewUserMailer.notify_user(@user).deliver

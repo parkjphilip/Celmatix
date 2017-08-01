@@ -1,8 +1,8 @@
-export const addToCart = (product, cartId) => {
+export const addToCart = (product, cartId, userId) => {
   debugger
   return $.ajax({
-    method: 'patch',
-    url: `/api/cart/${cartId}`,
+    method: 'put',
+    url: `/api/users/${userId}/carts/${cartId}`,
     data: {
       product: product,
       cartId: cartId
