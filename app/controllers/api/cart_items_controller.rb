@@ -3,10 +3,8 @@ class Api::CartItemsController < ApplicationController
   end
 
   def create
-    debugger
     @cart_item = CartItem.new(product_id: Integer(params[:product_id]),
-                              cart_id: Integer(params[:cart_id]),
-                              quantity: null)
+                              cart_id: Integer(params[:cart_id]))
     if @cart_item.save
       render "api/cart_items/show"
     else
