@@ -9,7 +9,7 @@ class NavBar extends React.Component {
   renderNavTabs() {
     if (this.props.currentUser && this.props.currentUser.is_admin === true) {
       return (
-        <div id="products-selected">
+        <div>
           <Link to="/">Products</Link>
           <Link to="/cart">Cart</Link>
           <Link to="/upload">Upload Products</Link>
@@ -17,7 +17,7 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div id="products-selected">
+        <div>
           <Link to="/">Products</Link>
           <Link to="/cart">Cart</Link>
         </div>

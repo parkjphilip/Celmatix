@@ -13,6 +13,7 @@ class ProductIndexItem extends React.Component {
         <div>{this.props.product.brand}</div>
         <div>{this.props.product.model}</div>
         <div>{this.props.product.price}</div>
+        
       </div>
     );
   }

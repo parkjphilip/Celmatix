@@ -5,6 +5,7 @@ import { HashRouter, Route } from 'react-router-dom';
 import AuthFormContainer from './auth/auth_form_container';
 import ProductsContainer from './products/products_container';
 import UploadContainer from './upload/upload_container';
+import CartContainer from './cart/cart_container';
 import App from './app';
 
 const Root = ({store}) => {
@@ -17,6 +18,7 @@ const Root = ({store}) => {
             <Route exact path="/login" component={ AuthFormContainer } />
             <Route exact path="/signup" component={ AuthFormContainer } />
             <Route exact path="/upload" component={ UploadContainer }/>
+            <Route exact path="/cart" component={ CartContainer }/>
           </Switch>
         </App>
       </HashRouter>
@@ -27,7 +29,6 @@ const Root = ({store}) => {
 export default Root;
 
 
-// <Route exact path="/cart" component={ CartContainer }/>
 // <Route exact path="/orders" component={ CartContainer }/>
 // <Route exact path="/addproducts" component={ CartContainer }/>
 // <Route exact path="/users" component={ CartContainer }/>

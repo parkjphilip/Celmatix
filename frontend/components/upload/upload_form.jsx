@@ -15,11 +15,11 @@ class UploadForm extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     this.props.createProducts(this.state.file);
   }
 
   render() {
-
     return (
       <div>
         <input type="file" onChange={this.updateFile}/>
