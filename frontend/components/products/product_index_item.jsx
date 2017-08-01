@@ -5,6 +5,7 @@ class ProductIndexItem extends React.Component {
 	constructor(props) {
 		super(props);
     this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.renderAddToCartButton = this.renderAddToCartButton.bind(this);
 	}
 
   handleAddToCart() {
@@ -15,28 +16,25 @@ class ProductIndexItem extends React.Component {
     };
   }
 
-  render() {
-    let product = this.props.product;
-    if (!this.props.currentUser) {
-      return (
-        <div>
-          <div>{product.name}</div>
-          <div>{product.brand}</div>
-          <div>{product.model}</div>
-          <div>{product.price}</div>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <div>{product.name}</div>
-          <div>{product.brand}</div>
-          <div>{product.model}</div>
-          <div>{product.price}</div>
-          <button onClick={this.handleAddToCart()} />
-        </div>
+  renderAddToCartButton(){
+    if (this.props.currentUser) {
+      return(
+        <button onClick={this.handleAddToCart()} />
       );
     }
+  }
+
+  render() {
+    let product = this.props.product;
+    return (
+      <div>
+        <div>{product.name}</div>
+        <div>{product.brand}</div>
+        <div>{product.model}</div>
+        <div>{product.price}</div>
+        {this.renderAddToCartButton()}
+      </div>
+    );
   }
 }
 

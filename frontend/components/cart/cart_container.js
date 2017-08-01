@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
 import Cart from './Cart';
-// import { fetchProducts } from '../../actions/product_actions';
+import { fetchCart } from '../../actions/cart_actions';
 
 const mapStateToProps = ( state ) => {
   return ({
     loggedIn: Boolean(state.session.currentUser),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    cart: state.session.cart
   });
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
-    // fetchProducts: () => dispatch(fetchProducts())
+    fetchCart: (cartId) => dispatch(fetchCart(cartId))
   });
 };
 

@@ -7,11 +7,13 @@ class NavBar extends React.Component {
 	}
 
   renderNavTabs() {
-    if (this.props.currentUser && this.props.currentUser.is_admin === true) {
+    let currentUser = this.props.currentUser;
+    let cart = this.props.currentUser.cart;
+    if (this.props.currentUser && currentUser.is_admin === true) {
       return (
         <div>
           <Link to="/">Products</Link>
-          <Link to="/cart">Cart</Link>
+          <Link to={`/users/${currentUser.id}/carts/${cart.id}`}>Cart</Link>
           <Link to="/upload">Upload Products</Link>
         </div>
       );
@@ -19,7 +21,6 @@ class NavBar extends React.Component {
       return (
         <div>
           <Link to="/">Products</Link>
-          <Link to="/cart">Cart</Link>
         </div>
       );
     }

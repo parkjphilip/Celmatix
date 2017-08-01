@@ -7,10 +7,11 @@ class Cart extends React.Component {
 	}
 
   componentDidMount() {
-    // this.props.fetchProducts();
+    this.props.fetchCard(this.props.cart.id);
   }
 
   render() {
+    debugger
     return (
       <div>
         Your cart is here
