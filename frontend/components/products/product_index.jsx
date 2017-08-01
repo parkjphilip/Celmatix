@@ -21,7 +21,12 @@ class ProductIndex extends React.Component {
           <div>
             <ul>
               {this.props.products.map(product =>
-                <ProductIndexItem key={product.id} product={product} />)}
+                <ProductIndexItem
+                  key={product.sku}
+                  product={product}
+                  currentUser={this.props.currentUser}
+                  addToCart={this.props.addToCart}
+                />)}
             </ul>
           </div>
         );

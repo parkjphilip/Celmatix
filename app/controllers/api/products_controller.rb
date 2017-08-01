@@ -17,7 +17,9 @@ class Api::ProductsController < ApplicationController
         render json: @product.errors.full_messages, status: 422
       end
     end
+    @products = Product.all
     render "api/products/index"
+
   end
 
 end

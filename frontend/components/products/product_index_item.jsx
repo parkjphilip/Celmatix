@@ -7,15 +7,29 @@ class ProductIndexItem extends React.Component {
 	}
 
   render() {
-    return (
-      <div>
-        <div>{this.props.product.name}</div>
-        <div>{this.props.product.brand}</div>
-        <div>{this.props.product.model}</div>
-        <div>{this.props.product.price}</div>
-        
-      </div>
-    );
+    let product = this.props.product;
+    let currentUser = this.props.currentUser;
+    let cart = this.props.currentUser.cart;
+    if (!this.props.currentUser) {
+      return (
+        <div>
+          <div>{product.name}</div>
+          <div>{product.brand}</div>
+          <div>{product.model}</div>
+          <div>{product.price}</div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <div>{product.name}</div>
+          <div>{product.brand}</div>
+          <div>{product.model}</div>
+          <div>{product.price}</div>
+          <button onClick={this.props.addToCart(product, cart.id)} />
+        </div>
+      );
+    }
   }
 }
 
