@@ -6,7 +6,7 @@ import AuthForm from './auth_form';
 const mapStateToProps = ( state ) => {
   return ({
     loggedIn: Boolean(state.session.currentUser),
-    errors: state.session.errors
+    errors: state.session.errors,
   });
 };
 
@@ -18,7 +18,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   } else {
     processForm = signup;
   }
-  // const processForm = (formType === '#/login') ? login : signup;
   return ({
     processForm: user => dispatch(processForm(user)),
     resetErrors: () => dispatch(resetErrors()),

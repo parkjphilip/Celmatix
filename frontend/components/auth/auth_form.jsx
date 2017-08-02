@@ -55,18 +55,22 @@ class AuthForm extends React.Component {
 	render() {
 		return (
       <div>
-          <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
-            <h1>Please {this.props.formType}</h1>
-            <div >
-              <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Username (email)"/>
-              <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
-              <input type="submit" value={this.props.formType}/>
-            </div>
-          </form>
+          <h1>Please {this.props.formType}</h1>
+          <div >
+            <input type="text" value={this.state.email} onChange={this.update("email")} placeholder="Username (email)"/>
+            <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
+            <input type="submit" value={this.props.formType}/>
+          </div>
+        </form>
       </div>
 		);
 	}
 }
 
 export default withRouter(AuthForm);
+
+
+
+

@@ -8,20 +8,35 @@ class NavBar extends React.Component {
 
   renderNavTabs() {
     let currentUser = this.props.currentUser;
-    if (this.props.currentUser && currentUser.is_admin === true) {
+    if (currentUser && currentUser.is_admin === true) {
       return (
         <div>
+          <h2>Hi, {currentUser.email}!</h2>
           <Link to="/">Products</Link>
           <Link to={`/carts/${this.props.currentUser.cart.id}`}>Cart</Link>
           <Link to="/upload">Upload Products</Link>
           <Link to="/addproduct">Add Product</Link>
           <Link to="/users">Customers</Link>
+          <button onClick={this.props.logout}>Log Out</button>
+        </div>
+      );
+    } else if (currentUser && currentUser.is_admin === true){
+      return (
+        <div>
+          <h2>Hi, {currentUser.email}!</h2>
+          <Link to="/">Products</Link>
+          <Link to={`/carts/${this.props.currentUser.cart.id}`}>Cart</Link>
+          <button onClick={this.props.logout.then(() => this.props.history.push("/#"))}>
+            Log Out
+          </button>
         </div>
       );
     } else {
       return (
         <div>
           <Link to="/">Products</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
         </div>
       );
     }
