@@ -15,3 +15,10 @@ export const fetchCartItems = (cartId) => {
     url: `api/carts/${cartId}/cart_items`
   });
 };
+
+export const deleteCartItem = (cartId, cartItemId) => {
+  return $.ajax({
+    method: 'destroy',
+    url: `api/carts/${cartId}/cart_items/${cartItemId}`
+  });
+};

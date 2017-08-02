@@ -14,5 +14,8 @@ class Api::CartItemsController < ApplicationController
   end
 
   def destroy
+    @cart_item = CartItem.find(id: Integer(params[:id]))
+    @cart_item.destroy
+    render "api/cart_items/show"
   end
 end
