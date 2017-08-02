@@ -12,11 +12,7 @@ class ProductIndex extends React.Component {
   }
 
   render() {
-    if (Object.keys(this.props.products).length === 0 ) {
-      return (
-        <div> No products uploaded yet </div>
-      );
-    } else {
+    if (Object.keys(this.props.products).length > 1) {
         return (
           <div>
             <ul>
@@ -30,6 +26,8 @@ class ProductIndex extends React.Component {
             </ul>
           </div>
         );
+    } else {
+      return <div />;
     }
   }
 }

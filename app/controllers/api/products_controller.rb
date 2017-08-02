@@ -4,6 +4,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def create
+
     if params[:products]
       params[:products].each do |product|
         @product = Product.new(
@@ -19,19 +20,30 @@ class Api::ProductsController < ApplicationController
         end
       end
     else
-      @product = Product.new(
-                              name: params[:name],
-                              brand: params[:brand],
-                              model: params[:model],
-                              sku: params[:sku],
-                              price: Integer(params[:price]),
-                              desc: params[:desc]
-                            )
-      if !@product.save
-        render json: @product.errors.full_messages, status: 422
+      if (params[:name] == "" || params[:brand] == "" || params[:model] == "" ||
+          params[:sku] == "" || params[:price] == "" || params[:desc] == "")
+           
+          render(
+            json: ["Please fill out all of the fields"],
+            status: 401
+          )
+      else
+
+        @product = Product.new(
+                                name: params[:name],
+                                brand: params[:brand],
+                                model: params[:model],
+                                sku: params[:sku],
+                                price: Integer(params[:price]),
+                                desc: params[:desc]
+                              )
+        if !@product.save
+
+          render @product.errors.full_messages
+        end
       end
     end
-    @products = Product.all
-    render "api/products/index"
+    # @products = Product.all
+    # render "api/products/index"
   end
 end

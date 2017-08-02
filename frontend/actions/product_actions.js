@@ -1,13 +1,18 @@
 import * as ProductAPIUtil from '../util/product_api_util';
 
 export const RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS";
+export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RESET_ERRORS = "RESET_ERRORS";
 
 export const createProducts = file => dispatch => {
   ProductAPIUtil.createProducts(file);
 };
 
 export const addProduct = product => dispatch => {
-  ProductAPIUtil.addProduct(product);
+  debugger
+  ProductAPIUtil.addProduct(product)
+  (err) => dispatch(receiveErrors(err.responseJSON)));
+
 };
 
 export const fetchProducts = () => dispatch => {
@@ -20,4 +25,18 @@ export const receiveProducts = products => {
     type: RECEIVE_PRODUCTS,
     products
   });
+};
+
+export const receiveErrors = errors => {
+  debugger
+  return ({
+    type: RECEIVE_ERRORS,
+    errors
+  });
+};
+
+export const resetErrors = () => {
+  return {
+    type: RESET_ERRORS
+  };
 };

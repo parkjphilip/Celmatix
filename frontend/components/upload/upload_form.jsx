@@ -19,9 +19,29 @@ class UploadForm extends React.Component {
     this.props.createProducts(this.state.file);
   }
 
+  renderErrors() {
+    if (this.props.errors) {
+      return(
+        <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`${i}`}>
+          {error}
+          </li>
+        ))}
+        </ul>
+      );
+    } else {
+      return (
+        <div>
+        </div>
+      );
+    }
+	}
+
   render() {
     return (
       <div>
+        {this.renderErrors()}
         <input type="file" onChange={this.updateFile}/>
         <button onClick={this.handleSubmit}>Submit File</button>
       </div>
