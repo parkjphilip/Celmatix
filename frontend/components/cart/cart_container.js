@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchCartItems: (cartId) => dispatch(fetchCartItems(cartId)),
     deleteCartItem: (cartId, cartItemId) =>
                           dispatch(deleteCartItem(cartId, cartItemId)),
-    buyItems: (userId, orderItems) => dispatch(buyItems(userId, orderItems))
+    buyItems: (userId, cartItems) => dispatch(buyItems(userId, cartItems))
   });
 };
 

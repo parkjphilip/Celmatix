@@ -11,7 +11,7 @@
 #
 
 class OrderItem < ApplicationRecord
-  validates :product_id, :quantity, :cart_id, presence: true
+  validates :product_id, :quantity, presence: true
 
   belongs_to :order
 end

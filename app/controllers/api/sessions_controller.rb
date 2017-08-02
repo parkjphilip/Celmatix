@@ -8,17 +8,17 @@ class Api::SessionsController < ApplicationController
 			render "api/users/show"
 		else
 			case
-			when user == "" && password != ""
+			when @user == "" && password != ""
 				render(
 					json: ["Username can't be blank"],
 					status: 401
 				)
-			when user != "" && password == ""
+			when @user != "" && password == ""
 				render(
 					json: ["Password can't be blank"],
 					status: 401
 				)
-			when user == "" && password == ""
+			when @user == "" && password == ""
 				render(
 					json: ["Username & password can't be blank"],
 					status: 401

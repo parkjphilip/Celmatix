@@ -15,9 +15,9 @@ class Cart extends React.Component {
 
   handleBuyItems() {
     let currentUser = this.props.currentUser;
-    let orderItems = this.props.cartItems;
+    let cartItems = this.props.cartItems;
     return () => {
-      this.props.buyItems(currentUser.id, orderItems);
+      this.props.buyItems(currentUser.id, cartItems);
     };
   }
 

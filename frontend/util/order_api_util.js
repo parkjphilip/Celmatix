@@ -23,13 +23,13 @@
 //   });
 // };
 
-export const buyItems = (userId, orderItems) => {
+export const buyItems = (userId, cartItems) => {
   return $.ajax({
     method: 'post',
     url: `/api/orders`,
     data: {
       user_id: userId,
-      order_items: orderItems
+      cart_items: cartItems
     }
   });
 };
