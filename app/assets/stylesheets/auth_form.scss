@@ -1,0 +1,35 @@
+#auth-container {
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 50px auto;
+  padding: 40px 30px;
+}
+
+#auth-message {
+  font-family: sans-serif;
+  margin: 0 auto;
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+#auth-input-fields {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.auth-input {
+  width: 400px;
+  height: 30px;
+  margin: 8px 0px;
+  font-size: 15px;
+}
+
+.auth-submit {
+  margin: 0 auto;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(38, 199, 204);;
+  font-size: 15px;
+  border: 1px solid gray;
+}
