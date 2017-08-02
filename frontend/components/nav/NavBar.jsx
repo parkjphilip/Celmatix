@@ -45,7 +45,9 @@ class NavBar extends React.Component {
   render() {
     return(
       <div className="nav-header">
+        <div className="nav-container">
         {this.renderNavTabs()}
+        </div>
       </div>
     );
   }

@@ -15,6 +15,9 @@ class ProductIndex extends React.Component {
     if (Object.keys(this.props.products).length > 1) {
         return (
           <div id="product-index-container">
+            <div id="product-index-title">
+            Take a look at all of our Products!
+            </div>
             <ul id="product-index">
               {this.props.products.map(product =>
                 <ProductIndexItem
