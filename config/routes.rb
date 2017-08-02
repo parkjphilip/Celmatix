@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :products, only: [:index, :create, :show, :destroy, :update]
-    resources :order, only: [:index, :show, :create]
+    resources :orders, only: [:index, :show, :create]
   end
 end
