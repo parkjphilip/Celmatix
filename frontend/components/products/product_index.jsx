@@ -14,8 +14,8 @@ class ProductIndex extends React.Component {
   render() {
     if (Object.keys(this.props.products).length > 1) {
         return (
-          <div>
-            <ul>
+          <div id="product-index-container">
+            <ul id="product-index">
               {this.props.products.map(product =>
                 <ProductIndexItem
                   key={product.sku}

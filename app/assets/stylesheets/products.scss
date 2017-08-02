@@ -1,3 +1,22 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#product-index-container {
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#product-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#product-index-item {
+  width: 270px;
+  height: 120px;
+  border: 1px solid black;
+  margin: 20px 0px;
+}

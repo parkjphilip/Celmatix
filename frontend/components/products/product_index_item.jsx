@@ -26,11 +26,11 @@ class ProductIndexItem extends React.Component {
   render() {
     let product = this.props.product;
     return (
-      <div>
-        <div>{product.name}</div>
-        <div>{product.brand}</div>
-        <div>{product.model}</div>
-        <div>{product.price}</div>
+      <div id="product-index-item">
+        <div>Name: {product.name}</div>
+        <div>Brand: {product.brand}</div>
+        <div>Model: {product.model}</div>
+        <div>Price: {product.price}</div>
         {this.renderAddToCartButton()}
       </div>
     );

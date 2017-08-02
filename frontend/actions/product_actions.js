@@ -9,9 +9,8 @@ export const createProducts = file => dispatch => {
 };
 
 export const addProduct = product => dispatch => {
-  debugger
   ProductAPIUtil.addProduct(product)
-  (err) => dispatch(receiveErrors(err.responseJSON)));
+                .then( (err) => dispatch(receiveErrors(err.responseJSON)));
 
 };
 
@@ -28,7 +27,6 @@ export const receiveProducts = products => {
 };
 
 export const receiveErrors = errors => {
-  debugger
   return ({
     type: RECEIVE_ERRORS,
     errors

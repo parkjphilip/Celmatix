@@ -44,6 +44,9 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'figaro'
+  gem 'guard', :require => false
+  gem 'guard-livereload', :require => false
+  gem 'rack-livereload'
 end
 
 group :development do

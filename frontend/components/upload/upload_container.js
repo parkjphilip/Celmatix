@@ -4,7 +4,6 @@ import UploadForm from './upload_form';
 
 
 const mapStateToProps = ( state ) => {
-  debugger
   return ({
     errors: state.products.errors
   });

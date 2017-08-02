@@ -10,22 +10,22 @@ class NavBar extends React.Component {
     let currentUser = this.props.currentUser;
     if (currentUser && currentUser.is_admin === true) {
       return (
-        <div>
+        <div id="nav">
           <h2>Hi, {currentUser.email}!</h2>
-          <Link to="/">Products</Link>
-          <Link to={`/carts/${this.props.currentUser.cart.id}`}>Cart</Link>
-          <Link to="/upload">Upload Products</Link>
-          <Link to="/addproduct">Add Product</Link>
-          <Link to="/users">Customers</Link>
+          <Link to="/" className="nav-link">Products</Link>
+          <Link to={`/carts/${this.props.currentUser.cart.id}`} className="nav-link">Cart</Link>
+          <Link to="/upload" className="nav-link">Upload Products</Link>
+          <Link to="/addproduct" className="nav-link">Add Product</Link>
+          <Link to="/users" className="nav-link">Customers</Link>
           <button onClick={this.props.logout}>Log Out</button>
         </div>
       );
     } else if (currentUser && currentUser.is_admin === true){
       return (
-        <div>
+        <div id="nav">
           <h2>Hi, {currentUser.email}!</h2>
-          <Link to="/">Products</Link>
-          <Link to={`/carts/${this.props.currentUser.cart.id}`}>Cart</Link>
+          <Link to="/" className="nav-link">Products</Link>
+          <Link to={`/carts/${this.props.currentUser.cart.id}`} className="nav-link">Cart</Link>
           <button onClick={this.props.logout.then(() => this.props.history.push("/#"))}>
             Log Out
           </button>
@@ -33,10 +33,10 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div>
-          <Link to="/">Products</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
+        <div id="nav">
+          <Link to="/" className="nav-link">Products</Link>
+          <Link to="/login" className="nav-link">Login</Link>
+          <Link to="/signup" className="nav-link">Signup</Link>
         </div>
       );
     }
@@ -44,7 +44,7 @@ class NavBar extends React.Component {
 
   render() {
     return(
-      <div id="nav-bar">
+      <div className="nav-header">
         {this.renderNavTabs()}
       </div>
     );
