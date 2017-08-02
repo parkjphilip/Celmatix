@@ -33,14 +33,6 @@ class AuthForm extends React.Component {
 							.then(() => this.props.history.push("/#"));
 	}
 
-	// navLink() {
-	// 	if (this.props.formType === "login") {
-	// 		return <Link to="/signup">sign up</Link>;
-	// 	} else {
-	// 		return <Link to="/login">log in</Link>;
-	// 	}
-	// }s
-
 	renderErrors() {
     if (this.props.errors) {
       return(

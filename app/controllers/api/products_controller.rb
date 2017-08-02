@@ -1,6 +1,6 @@
 class Api::ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.order(created_at: :asc, id: :asc)
   end
 
   def create
