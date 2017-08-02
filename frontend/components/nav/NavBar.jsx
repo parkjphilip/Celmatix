@@ -14,6 +14,7 @@ class NavBar extends React.Component {
           <Link to="/">Products</Link>
           <Link to={`/carts/${this.props.currentUser.cart.id}`}>Cart</Link>
           <Link to="/upload">Upload Products</Link>
+          <Link to="/addproduct">Add Product</Link>
           <Link to="/users">Customers</Link>
         </div>
       );

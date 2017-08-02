@@ -6,6 +6,10 @@ export const createProducts = file => dispatch => {
   ProductAPIUtil.createProducts(file);
 };
 
+export const addProduct = product => dispatch => {
+  ProductAPIUtil.addProduct(product);
+};
+
 export const fetchProducts = () => dispatch => {
   return ProductAPIUtil.fetchProducts()
                        .then(products => dispatch(receiveProducts(products)));

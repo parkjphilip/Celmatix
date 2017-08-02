@@ -14,3 +14,11 @@ export const fetchProducts = () => {
     url: 'api/products'
   });
 };
+
+export const addProduct = (product) => {
+  return $.ajax({
+    method: 'post',
+    url: 'api/products',
+    data: product
+  });
+};

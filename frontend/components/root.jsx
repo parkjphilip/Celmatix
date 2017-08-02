@@ -7,6 +7,7 @@ import ProductsContainer from './products/products_container';
 import UploadContainer from './upload/upload_container';
 import CartContainer from './cart/cart_container';
 import UsersContainer from './users/users_container';
+import AddProductContainer from './add_product/add_product_container.js'
 import App from './app';
 
 const Root = ({store}) => {
@@ -21,6 +22,7 @@ const Root = ({store}) => {
             <Route exact path="/upload" component={ UploadContainer }/>
             <Route exact path="/carts/:cart_id" component={ CartContainer }/>
             <Route exact path="/users" component={ UsersContainer }/>
+            <Route exact path="/addproduct" component={ AddProductContainer }/>
           </Switch>
         </App>
       </HashRouter>
@@ -32,7 +34,6 @@ export default Root;
 
 
 // <Route exact path="/orders" component={ CartContainer }/>
-// <Route exact path="/addproducts" component={ CartContainer }/>
 
 
 
