@@ -5,10 +5,26 @@ import CartIndexItem from './cart_index_item';
 class Cart extends React.Component {
 	constructor(props) {
 		super(props);
+    this.renderBuyButton = this.renderBuyButton.bind(this);
+    this.handleBuyItems = this.handleBuyItems.bind(this);
 	}
 
   componentDidMount() {
     this.props.fetchCartItems(this.props.currentUser.cart.id);
+  }
+
+  handleBuyItems() {
+    let currentUser = this.props.currentUser;
+    let cartItems = this.props.cartItems;
+    return () => {
+      this.props.buyItems(currentUser.id, cartItems);
+    };
+  }
+
+  renderBuyButton(){
+    return(
+      <button onClick={this.handleBuyItems()} />
+    );
   }
 
   render() {
@@ -28,6 +44,7 @@ class Cart extends React.Component {
                   deleteCartItem={this.props.deleteCartItem}
                 />)}
             </ul>
+            {this.renderBuyButton()}
           </div>
         );
     }
