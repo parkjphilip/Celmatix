@@ -3,10 +3,11 @@ import Cart from './Cart';
 import { fetchCart } from '../../actions/cart_actions';
 
 const mapStateToProps = ( state ) => {
+  debugger
   return ({
     loggedIn: Boolean(state.session.currentUser),
     currentUser: state.session.currentUser,
-    cart: state.session.cart
+    cart: state.cart
   });
 };
 

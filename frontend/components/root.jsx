@@ -18,7 +18,7 @@ const Root = ({store}) => {
             <Route exact path="/login" component={ AuthFormContainer } />
             <Route exact path="/signup" component={ AuthFormContainer } />
             <Route exact path="/upload" component={ UploadContainer }/>
-            <Route exact path="/users/:user_id/carts/:cart_id" component={ CartContainer }/>
+            <Route exact path="/carts/:cart_id" component={ CartContainer }/>
           </Switch>
         </App>
       </HashRouter>
