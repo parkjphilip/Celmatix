@@ -18,7 +18,7 @@ export const fetchCartItems = (cartId) => {
 
 export const deleteCartItem = (cartId, cartItemId) => {
   return $.ajax({
-    method: 'destroy',
+    method: 'delete',
     url: `api/carts/${cartId}/cart_items/${cartItemId}`
   });
 };

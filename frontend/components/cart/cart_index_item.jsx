@@ -9,8 +9,10 @@ class CartIndexItem extends React.Component {
 	}
 
   handleDeleteProduct() {
-    this.props.deleteCartItem(this.props.cart.id, this.props.cartItem.id);
-  }
+    return () => {
+      this.props.deleteCartItem(this.props.cart.id, this.props.cartItem.id);
+    };
+  };
 
   renderDeleteButton() {
     return(
