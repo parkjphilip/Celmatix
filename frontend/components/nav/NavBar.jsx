@@ -13,7 +13,7 @@ class NavBar extends React.Component {
       return (
         <div>
           <Link to="/">Products</Link>
-          <Link to={`/users/${currentUser.id}/carts/${cart.id}`}>Cart</Link>
+          <Link to={`/carts/${cart.id}`}>Cart</Link>
           <Link to="/upload">Upload Products</Link>
         </div>
       );

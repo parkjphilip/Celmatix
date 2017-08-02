@@ -1,5 +1,6 @@
 class Api::CartItemsController < ApplicationController
   def index
+    @cart_items = CartItem.where(cart_id: Integer(params[:cart_id]))
   end
 
   def create

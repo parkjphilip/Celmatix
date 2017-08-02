@@ -9,9 +9,9 @@ export const addToCart = (productId, cartId) => {
   });
 };
 
-export const fetchCart = (cartId) => {
+export const fetchCartItems = (cartId) => {
   return $.ajax({
     method: 'get',
-    url: `api/carts/${cartId}`
+    url: `api/carts/${cartId}/cart_items`
   });
 };

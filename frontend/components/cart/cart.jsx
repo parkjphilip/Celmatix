@@ -7,8 +7,7 @@ class Cart extends React.Component {
 	}
 
   componentDidMount() {
-    let currentUser = this.props.currentUser;
-    this.props.fetchCart(currentUser.cart.id, currentUser.id);
+    this.props.fetchCartItems(this.props.currentUser.cart.id);
   }
 
   render() {
