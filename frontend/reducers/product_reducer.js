@@ -6,22 +6,18 @@ import {
 import merge from 'lodash/merge';
 
 const oldState = Object.freeze({
-  errors:[]
+  products: [],
+  errors: []
 });
 
 const ProductReducer = (state = oldState, action) => {
-
   switch(action.type) {
     case RECEIVE_PRODUCTS:
-      return action.products;
+      return merge({}, state, { products: action.products, errors: []});
     case RECEIVE_ERRORS:
-
-      const errors = action.errors;
-      return merge({}, oldState, { errors });
+      return merge({}, state, { errors: action.errors });
     case RESET_ERRORS:
-      let newState = merge({}, state);
-      newState.errors = [];
-      return newState;
+      return merge({}, state, { errors: [] });
     default:
       return state;
   }

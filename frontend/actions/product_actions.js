@@ -10,8 +10,7 @@ export const createProducts = file => dispatch => {
 
 export const addProduct = product => dispatch => {
   ProductAPIUtil.addProduct(product)
-                .then( (err) => dispatch(receiveErrors(err.responseJSON)));
-
+                .then( null, (err) => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const fetchProducts = () => dispatch => {

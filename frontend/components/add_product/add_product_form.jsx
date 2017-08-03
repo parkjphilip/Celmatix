@@ -35,24 +35,24 @@ class AddProductForm extends React.Component {
 		this.props.addProduct(product);
 	}
 
-	// renderErrors() {
-  //   if (this.props.errors) {
-  //     return(
-  //       <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`${i}`}>
-  //         {error}
-  //         </li>
-  //       ))}
-  //       </ul>
-  //     );
-  //   } else {
-  //     return (
-  //       <div>
-  //       </div>
-  //     );
-  //   }
-	// }
+	renderErrors() {
+    if (this.props.errors) {
+      return(
+        <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`${i}`}>
+          {error}
+          </li>
+        ))}
+        </ul>
+      );
+    } else {
+      return (
+        <div>
+        </div>
+      );
+    }
+	}
 
 	render() {
 		return (
@@ -68,6 +68,7 @@ class AddProductForm extends React.Component {
               <input type="text" value={this.state.desc} onChange={this.update("desc")} placeholder="Description"/>
               <input type="submit" value='Submit'/>
             </div>
+            {this.renderErrors()}
           </form>
       </div>
 		);

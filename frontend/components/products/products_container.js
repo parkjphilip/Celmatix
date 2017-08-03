@@ -5,7 +5,7 @@ import { addToCart } from '../../actions/cart_actions';
 
 const mapStateToProps = ( state ) => {
   return ({
-    products: state.products,
+    products: state.products.products,
     currentUser: state.session.currentUser
   });
 };
