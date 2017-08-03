@@ -8,5 +8,6 @@ to install dependencies
 * Run 'webpack' to bundle all of the files
 * Navigate to 'http://localhost:3000/#/' to view the app
 
-Additional Information
-* ADMIN Login Information: username: admin@celmatix.com, password: password123
+#ADMIN Login Information:
+* Username: admin@celmatix.com
+* Password: password123
