@@ -45,7 +45,7 @@ class UploadForm extends React.Component {
           Upload a file to add products!
         </div>
         {this.renderErrors()}
-        <input className="input-file" type="file" onChange={this.updateFile}/>
+        <input className="input-file" type="file" onChange={this.updateFile} size="60"/>
         <button className="upload-submit-button hover" onClick={this.handleSubmit}>Submit File</button>
       </div>
     );
