@@ -1,0 +1,42 @@
+.add-product-container {
+  width: 500px;
+  height: 350px;
+  border: 1px solid black;
+  margin: 50px auto;
+  padding: 40px 30px;
+}
+
+.add-product-text {
+  font-size: 25px;
+}
+
+.add-product-input {
+  width: 300px;
+  height: 25px;
+  font-size: 25px;
+  margin: 5px;
+}
+
+.add-product-input-desc {
+  width: 300px;
+  height: 100px;
+  font-size: 25px;
+  margin: 5px;
+}
+
+.add-product-submit {
+  position: relative;
+  bottom: 100px;
+  left: 30px;
+  width: 130px;
+  height: 50px;
+  font-size: 20px;
+  background-color: rgb(38, 199, 204);;
+  border: 1px solid gray;
+
+}
+
+.add-product-submit:hover {
+    background-color: white;
+    color: black;
+}
