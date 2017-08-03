@@ -18,11 +18,13 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: true
 
+# ensures that after a user is created, that the user has a session token
   after_initialize :ensure_session_token
 
   has_one :cart
   has_many :orders
 
+# almost like an attr_reader for the newly created bcrpyt password
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
     @password = password
@@ -34,6 +36,8 @@ class User < ApplicationRecord
     user.is_password?(password) ? user : nil
   end
 
+# Password.new grabs the password out of the password digest and checks
+# it with the inputted password
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end

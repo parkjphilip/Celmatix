@@ -10,6 +10,7 @@ const mapStateToProps = ( state ) => {
   });
 };
 
+//the formtype is passed in as a prop based on what the current location is
 const mapDispatchToProps = (dispatch, ownProps) => {
   const formType = ownProps.location.pathname.slice(1);
   let processForm;

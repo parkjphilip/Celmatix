@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 
 class AddProductForm extends React.Component {
+  //set the original state of the component to an empty string for all fields
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -15,12 +16,17 @@ class AddProductForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+  //every time a field is changed, this update function is called to update
+  //the current state of the component to match the fields
 	update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value
 		});
 	}
 
+  //when the fields are submitted, the fields are used to submit the product
+  // the resetErrors function is commented out here because I was unable to make
+  //it function correctly. the code is mostly written out, just was unable to finish it
 	handleSubmit(e) {
 		e.preventDefault();
     let integerPrice = Number(this.state.price);
@@ -28,10 +34,12 @@ class AddProductForm extends React.Component {
 		const product = this.state;
 		this.props.addProduct(product);
     this.props.history.push("/#");
-    // this.props.resetErrors();
+    // this.props.resetProductErrors
 	}
 
-	renderErrors() {
+  //this function is written and fully function but
+  // not used because I was unable to clear the errors
+	renderProductErrors() {
     if (this.props.errors) {
       return(
         <ul>
@@ -60,7 +68,7 @@ class AddProductForm extends React.Component {
               <input className="add-product-input" type="text" value={this.state.brand} onChange={this.update("brand")} placeholder="Brand"/>
               <input className="add-product-input" type="text" value={this.state.model} onChange={this.update("model")} placeholder="Model"/>
               <input className="add-product-input" type="text" value={this.state.sku} onChange={this.update("sku")} placeholder="Sku"/>
-              <input className="add-product-input" type="number" value={this.state.price} onChange={this.update("price")} placeholder="Price" step="0.01"/>
+              <input className="add-product-input" type="number" value={this.state.price} onChange={this.update("price")} placeholder="Price"/>
               <input className="add-product-input-desc" type="text" value={this.state.desc} onChange={this.update("desc")} placeholder="Description"/>
               <input className="add-product-submit hover" type="submit" value='Submit'/>
             </div>
@@ -70,6 +78,6 @@ class AddProductForm extends React.Component {
 	}
 }
 
+// {this.renderProductErrors()}
 export default withRouter(AddProductForm);
 
-// {this.renderErrors()}

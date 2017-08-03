@@ -7,6 +7,8 @@ const CartItemsReducer = (state = {}, action) => {
     case RECEIVE_CART_ITEMS:
       return action.cartItems;
     case REMOVE_CART_ITEM:
+    //new state is returned, iterating through the array of cart items and
+    //removing the one that is common
       const newState = state.concat([]);
       newState.forEach( (cartItem, idx) => {
         if (cartItem.id === action.cartItem.id) {

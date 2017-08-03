@@ -4,6 +4,9 @@ class Api::CartItemsController < ApplicationController
   end
 
   def create
+
+    # create cart items that fit in the current
+    # product's id and current cart's id
     @cart_item = CartItem.new(product_id: Integer(params[:product_id]),
                               cart_id: Integer(params[:cart_id]))
     if @cart_item.save

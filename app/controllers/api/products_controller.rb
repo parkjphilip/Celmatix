@@ -4,6 +4,8 @@ class Api::ProductsController < ApplicationController
   end
 
   def create
+    # this is for the case of a JSON file upload.
+    # the file must be nested under products for the upload to be successful
     if params[:products]
       params[:products].each do |product|
         @product = Product.new(
@@ -20,6 +22,7 @@ class Api::ProductsController < ApplicationController
       end
       render 'api/products/index'
     else
+      # this code is for an upload through the upload form
       price = params[:price] == "" ? 0 : Integer(params[:price])
       @product = Product.new(
                               name: params[:name],
@@ -43,6 +46,7 @@ class Api::ProductsController < ApplicationController
       render 'api/products/show'
     else
       render json: ["Product not found."], status: 422
+    end
   end
 
   def update
@@ -51,5 +55,6 @@ class Api::ProductsController < ApplicationController
       render 'api/products/show'
     else
       render json: ["Product not found."], status: 422
+    end
   end
 end

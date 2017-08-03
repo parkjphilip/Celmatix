@@ -9,6 +9,7 @@ class UploadForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+  //when a file is uploaded, the state is set to that file
   updateFile(e) {
     var file = e.currentTarget.files[0];
     this.setState({ file: file });

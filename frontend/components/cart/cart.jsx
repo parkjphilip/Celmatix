@@ -31,6 +31,9 @@ class Cart extends React.Component {
     );
   }
 
+// The first if statement is for the inital render of the component
+// before the cartItems have been fetched. After they have been fetched,
+// then the list of cartIndexItems can be returned
   render() {
     if (Object.keys(this.props.cartItems).length === 0 ) {
       return (

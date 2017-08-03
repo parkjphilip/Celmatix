@@ -14,6 +14,7 @@ class AuthForm extends React.Component {
 		}
 	}
 
+  //resets user errors every time the component updates if the formType is different
 	componentWillReceiveProps(newProps){
 		if (newProps.formType !== this.props.formType){
 			this.props.resetErrors();
@@ -26,6 +27,9 @@ class AuthForm extends React.Component {
 		});
 	}
 
+  // processForm completes either login or signup, which was passed down from the
+  // container based on the current location. once they are logged in, they are
+  // redirected to the products page
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;

@@ -8,6 +8,7 @@ class NavBar extends React.Component {
 
   renderNavTabs() {
     let currentUser = this.props.currentUser;
+    //if the user that logs in is an admin, render these nav links
     if (currentUser && currentUser.is_admin === true) {
       return (
         <div id="nav">
@@ -20,18 +21,20 @@ class NavBar extends React.Component {
           <button className="logout-button hover" onClick={this.props.logout}>Log Out</button>
         </div>
       );
-    } else if (currentUser && currentUser.is_admin === true){
+      //for the case is the user that logs in is not an admin
+    } else if (currentUser && currentUser.is_admin === false){
       return (
         <div id="nav">
           <h2 className="welcome-message">Hi, {currentUser.email}!</h2>
           <Link to="/" className="nav-link">Products</Link>
           <Link to={`/carts/${this.props.currentUser.cart.id}`} className="nav-link">Cart</Link>
-          <button onClick={this.props.logout.then(() => this.props.history.push("/#"))}>
+          <button onClick={this.props.logout}>
             Log Out
           </button>
         </div>
       );
     } else {
+      //for the case when there is no logged in user
       return (
         <div id="nav">
           <Link to="/" className="nav-link">Products</Link>
