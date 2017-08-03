@@ -17,7 +17,7 @@ class NavBar extends React.Component {
           <Link to="/upload" className="nav-link">Upload Products</Link>
           <Link to="/addproduct" className="nav-link">Add Product</Link>
           <Link to="/users" className="nav-link">Customers</Link>
-          <button onClick={this.props.logout}>Log Out</button>
+          <button className="logout-button hover" onClick={this.props.logout}>Log Out</button>
         </div>
       );
     } else if (currentUser && currentUser.is_admin === true){
