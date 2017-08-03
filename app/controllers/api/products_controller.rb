@@ -36,4 +36,12 @@ class Api::ProductsController < ApplicationController
       end
     end
   end
+
+  def show
+    @product = Product.find(params[:id])
+    if @product
+      render 'api/products/show'
+    else
+      render json: ["Product not found."], status: 422
+  end
 end
