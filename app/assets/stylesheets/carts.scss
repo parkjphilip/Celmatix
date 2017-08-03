@@ -1,3 +1,58 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#product-index-title, #cart-title {
+  font-size: 40px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.cart-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cart-index-container {
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.cart-index-item {
+  width: 270px;
+  height: 120px;
+  border: 1px solid black;
+  margin: 20px 0px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+.delete-cart-item-button {
+  width: 100px;
+  height: 35px;
+  background-color: rgb(38, 199, 204);
+  font-size: 15px;
+  border: 1px solid gray;
+  color: black;
+  margin-top: 5px;
+}
+
+.cart-buy-button {
+  margin-left: 450px;
+  margin-right: 450px;
+  width: 150px;
+  height: 50px;
+  background-color: rgb(38, 199, 204);
+  font-size: 25px;
+  margin-top: 5px;
+  border: 1px solid gray;
+}
+
+.delete-cart-item-button:hover, .cart-buy-button:hover {
+    background-color: white;
+    color: black;
+}

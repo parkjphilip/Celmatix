@@ -14,7 +14,7 @@
   justify-content: space-between;
 }
 
-#product-index-item {
+.product-index-item {
   width: 270px;
   height: 120px;
   border: 1px solid black;
@@ -27,4 +27,42 @@
   font-size: 40px;
   margin: 0 auto;
   width: 600px;
+}
+
+.Modal {
+  position: absolute;
+  top: 350px;
+  left: 350px;
+  right: 350px;
+  bottom: 350px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.Modal-Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-contents {
+  font-size: 20px;
+}
+
+.add-to-cart-button {
+  width: 100px;
+  height: 40px;
+  background-color: rgb(38, 199, 204);;
+  font-size: 15px;
+  border: 1px solid gray;
+  color: black;
+  padding-top: 5px;
+}
+
+.add-to-cart-button:hover {
+    background-color: white;
+    color: black;
 }

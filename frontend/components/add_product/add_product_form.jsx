@@ -14,12 +14,6 @@ class AddProductForm extends React.Component {
                  };
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
-  //
-	// componentWillReceiveProps(newProps){
-	// 	if (newProps.formType !== this.props.formType){
-	// 		this.props.resetErrors();
-	// 	}
-	// }
 
 	update(field) {
 		return e => this.setState({
@@ -33,6 +27,8 @@ class AddProductForm extends React.Component {
     this.setState({ price: integerPrice });
 		const product = this.state;
 		this.props.addProduct(product);
+    this.props.history.push("/#");
+    // this.props.resetErrors();
 	}
 
 	renderErrors() {
@@ -68,7 +64,6 @@ class AddProductForm extends React.Component {
               <input type="text" value={this.state.desc} onChange={this.update("desc")} placeholder="Description"/>
               <input type="submit" value='Submit'/>
             </div>
-            {this.renderErrors()}
           </form>
       </div>
 		);

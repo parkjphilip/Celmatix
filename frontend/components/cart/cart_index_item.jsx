@@ -12,18 +12,20 @@ class CartIndexItem extends React.Component {
     return () => {
       this.props.deleteCartItem(this.props.cart.id, this.props.cartItem.id);
     };
-  };
+  }
 
   renderDeleteButton() {
     return(
-      <button onClick={this.handleDeleteProduct()} />
+      <button className="delete-cart-item-button hover" onClick={this.handleDeleteProduct()} >
+        Delete Item
+      </button>
     );
   }
 
   render() {
     let item = this.props.cartItem;
     return (
-      <div>
+      <div className="cart-index-item">
         <div>{item.product.name}</div>
         <div>{item.product.brand}</div>
         <div>{item.product.model}</div>

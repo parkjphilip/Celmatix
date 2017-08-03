@@ -23,19 +23,26 @@ class Cart extends React.Component {
 
   renderBuyButton(){
     return(
-      <button onClick={this.handleBuyItems()} />
+      <div>
+        <button className="cart-buy-button hover" onClick={this.handleBuyItems()} >
+          Buy Items
+        </button>
+      </div>
     );
   }
 
   render() {
     if (Object.keys(this.props.cartItems).length === 0 ) {
       return (
-        <div> No cart items yet </div>
+        <div />
       );
     } else {
         return (
-          <div>
-            <ul>
+          <div className="cart-index-container">
+            <div id="cart-title">
+              Your Cart Items
+            </div>
+            <ul className="cart-index">
               {this.props.cartItems.map(cartItem =>
                 <CartIndexItem
                   key={cartItem.id}

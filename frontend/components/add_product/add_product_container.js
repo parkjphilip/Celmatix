@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import { addProduct } from '../../actions/product_actions';
+import { addProduct, resetErrors } from '../../actions/product_actions';
 import AddProductForm from './add_product_form';
-
 
 const mapStateToProps = ( state ) => {
   return ({
@@ -11,6 +10,7 @@ const mapStateToProps = ( state ) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
+    resetErrors: () => dispatch(resetErrors()),
     addProduct: product => dispatch(addProduct(product)),
   });
 };

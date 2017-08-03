@@ -11,7 +11,7 @@ class NavBar extends React.Component {
     if (currentUser && currentUser.is_admin === true) {
       return (
         <div id="nav">
-          <h2>Hi, {currentUser.email}!</h2>
+          <h2 className="welcome-message">Hi, {currentUser.email}!</h2>
           <Link to="/" className="nav-link">Products</Link>
           <Link to={`/carts/${this.props.currentUser.cart.id}`} className="nav-link">Cart</Link>
           <Link to="/upload" className="nav-link">Upload Products</Link>
@@ -23,7 +23,7 @@ class NavBar extends React.Component {
     } else if (currentUser && currentUser.is_admin === true){
       return (
         <div id="nav">
-          <h2>Hi, {currentUser.email}!</h2>
+          <h2 className="welcome-message">Hi, {currentUser.email}!</h2>
           <Link to="/" className="nav-link">Products</Link>
           <Link to={`/carts/${this.props.currentUser.cart.id}`} className="nav-link">Cart</Link>
           <button onClick={this.props.logout.then(() => this.props.history.push("/#"))}>
