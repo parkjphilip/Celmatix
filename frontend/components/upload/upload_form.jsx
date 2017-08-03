@@ -40,10 +40,13 @@ class UploadForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="upload-file-container">
+        <div className="upload-file-text">
+          Upload a file to add products!
+        </div>
         {this.renderErrors()}
-        <input type="file" onChange={this.updateFile}/>
-        <button onClick={this.handleSubmit}>Submit File</button>
+        <input className="input-file" type="file" onChange={this.updateFile}/>
+        <button className="upload-submit-button hover" onClick={this.handleSubmit}>Submit File</button>
       </div>
     );
   }
