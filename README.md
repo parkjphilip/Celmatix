@@ -1,24 +1,12 @@
-# README
+# Celmatix Platform Engineer Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Instructions for Running this project:
+* Clone the repo
+* At the route director of the project, run 'npm install' and 'bundle install'
+to install dependencies
+* Run 'rails s' to start the server
+* Run 'webpack' to bundle all of the files
+* Navigate to 'http://localhost:3000/#/' to view the app
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Additional Information
+* ADMIN Login Information: username: admin@celmatix.com, password: password123
