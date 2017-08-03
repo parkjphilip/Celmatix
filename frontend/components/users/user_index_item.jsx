@@ -10,7 +10,7 @@ class UserIndexItem extends React.Component {
     let user = this.props.user;
     return (
       <div>
-        <div>{user.email}</div>
+        <div className="user-index-email">{user.email}</div>
       </div>
     );
   }

@@ -19,7 +19,10 @@ class UsersIndex extends React.Component {
     } else {
         return (
           <div>
-            <ul>
+            <div className="users-index-message">
+              Current Customer Listing
+            </div>
+            <ul className="users-index">
               {this.props.users.map(user =>
                 <UserIndexItem
                   key={user.id}
